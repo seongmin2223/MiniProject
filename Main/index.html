@@ -11,14 +11,33 @@
             font-family: "Black Han Sans", sans-serif;
             font-weight: 400;
             font-style: normal;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             background: #fff;
             font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            margin: 0;
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: green;
         }
 
         .container {
@@ -165,6 +184,11 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <a href="Main/index.html">메인으로</a>
+        <a href="AllPersonalPage/seongminsPage.html">성민</a>
+    </div>
+
     <div class="container">
         <div class="banner">
             <h1>BUG BUSTERS !!</h1>
