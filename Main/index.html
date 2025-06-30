@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <base href="/MiniProject/">
     <title>BUG BUSTERS</title>
     <style>
-     @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
-                 *{
-          font-family: "Black Han Sans", sans-serif;
-          font-weight: 400;
-          font-style: normal;
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
+
+        * {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
         body {
             margin: 0;
             padding: 0;
             background: #fff;
             font-family: 'Arial', sans-serif;
         }
-        .navbar{
+
+        .navbar {
             margin: 0;
             background-color: #333;
             overflow: hidden;
-            display : flex;
-            justify-content : center;
+            display: flex;
+            justify-content: center;
         }
+
         .navbar a {
             float: left;
-              display: block;
-              color: #f2f2f2;
-              text-align: center;
-              padding: 14px 20px;
-              text-decoration: none;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
         }
+
         .navbar a:hover {
-              background-color : white;
-              color: green;
+            background-color: white;
+            color: green;
         }
+
         .container {
             width: 1280px;
             margin: 0 auto;
         }
+
         .banner {
             position: relative;
             width: 100%;
@@ -54,14 +66,19 @@
             flex-direction: column;
             text-align: center;
             transition: all 0.3s ease;
+            margin-bottom: 50px;
+
         }
+
         .banner:hover h1 {
             color: yellow;
             transform: scale(1.1);
         }
+
         .banner:hover p {
             color: #ffd700;
         }
+
         .banner h1 {
             font-size: 60px;
             font-weight: bold;
@@ -69,18 +86,55 @@
             margin: 0;
             transition: all 0.3s ease;
         }
+
         .banner p {
             margin-top: 10px;
             font-size: 18px;
             transition: all 0.3s ease;
         }
+
         .profile-section {
             background: white;
             padding: 50px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding-bottom: 50px;
         }
+
+        .team_introduce,
+        .team_target {
+            width: 300px;
+            height: 500px;
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .team_introduce h2,
+        .team_target h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #333;
+            border-bottom: 2px solid #666;
+            padding-bottom: 5px;
+        }
+
+        .team_introduce p,
+        .team_target p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+
         .slider {
             width: 400px;
             height: 500px;
@@ -89,11 +143,16 @@
             overflow: hidden;
             border-radius: 50%;
             border: 4px solid white;
+
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+            position: relative;
         }
+
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
+
         .slides img {
             width: 400px;
             height: 500px;
@@ -101,9 +160,12 @@
             border-radius: 50%;
             flex-shrink: 0;
         }
+
         .indicator {
+            text-align: center;
             margin-top: 20px;
         }
+
         .dot {
             display: inline-block;
             width: 12px;
@@ -115,68 +177,146 @@
             opacity: 0.5;
             transition: opacity 0.3s;
         }
+
         .dot.active {
             opacity: 1;
         }
+
+        .team_introduce ul,
+        .team_target ul {
+            padding-left: 0px;
+            margin: 0 auto;
+            display: inline-block;
+            text-align: left;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+            list-style-position: inside;
+        }
+
+        .team_introduce li,
+        .team_target li {
+            margin-bottom: 8px;
+        }
     </style>
 </head>
+
 <body>
-<div class="navbar">
-    <a href="Main/index.html">메인으로</a>
-    <a href="AllPersonalPage/seongminsPage.html">성민</a>
-</div>
-<div class="container">
-    <div class="banner">
-        <h1>BUG BUSTERS !!</h1>
-        <p>처음엔 버그들을 많이 만나겠지만, 점차 해결사로 !</p>
+    <div class="navbar">
+        <a href="Main/index.html">메인으로</a>
+        <a href="AllPersonalPage/seongminsPage.html">성민</a>
     </div>
+    <div class="container">
+        <div class="banner">
+            <h1>BUG BUSTERS !!</h1>
+            <p>처음엔 버그들을 많이 만나겠지만, 점차 해결사로 !</p>
+        </div>
 
-    <div class="profile-section">
-        <div class="slider">
-            <div class="slides">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile1">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile2">
-                <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Profile3">
-                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Profile4">
-                <img src="https://randomuser.me/api/portraits/women/35.jpg" alt="Profile5">
+        <div class="profile-section">
+            <div class="team_introduce" id="teamIntroduce"></div>
+            <div class="slider-area">
+                <div class="slider">
+                    <div class="slides" id="slides">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile1">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile2">
+                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Profile3">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Profile4">
+                        <img src="https://randomuser.me/api/portraits/women/35.jpg" alt="Profile5">
+                    </div>
+                </div>
+                <div class="indicator" id="indicator"></div>
             </div>
-        </div>
-        <div class="indicator">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-            <span class="dot" data-index="4"></span>
+
+            <div class="team_target" id="teamTarget"></div>
         </div>
     </div>
-</div>
 
-<script>
-    const slides = document.querySelector('.slides');
-    const dots = document.querySelectorAll('.dot');
-    const slider = document.querySelector('.slider');
-    let currentIndex = 0;
-    const totalSlides = dots.length;
+    <script>
+        const slides = document.getElementById('slides');
+        const indicator = document.getElementById('indicator');
+        const teamIntroduceDiv = document.getElementById('teamIntroduce');
+        const teamTargetDiv = document.getElementById('teamTarget');
+        const slider = document.querySelector('.slider');
 
-    function goToSlide(index) {
-        const slideWidth = slider.clientWidth;
-        slides.style.transform = `translateX(-${index * slideWidth}px)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[index].classList.add('active');
-        currentIndex = index;
-    }
+        const totalSlides = slides.children.length;
+        let currentIndex = 0;
 
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            const index = parseInt(dot.getAttribute('data-index'));
-            goToSlide(index);
+        const teamIntroduces = [
+            "안녕하세요",
+            "저희는 00입니다",
+            "팀 소개 3번째 내용",
+            "팀 소개 4번째 내용",
+            "팀 소개 5번째 내용"
+        ];
+
+        const teamTargets = [
+            "anjdi",
+            "ㅇㅇ",
+            "3. 000하기",
+            "4. 000하기",
+            "5. 000하기"
+        ];
+
+        function setSlidesWidth() {
+            const slideWidth = slides.children[0].clientWidth;
+            slides.style.width = `${slideWidth * totalSlides}px`;
+            return slideWidth;
+        }
+
+        let slideWidth = setSlidesWidth();
+
+        window.addEventListener('resize', () => {
+            slideWidth = setSlidesWidth();
+            goToSlide(currentIndex);
         });
-    });
 
-    setInterval(() => {
-        const nextIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(nextIndex);
-    }, 3000);
-</script>
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+                resetAutoSlide();
+            });
+            indicator.appendChild(dot);
+        }
+        const dots = indicator.querySelectorAll('.dot');
+
+        function goToSlide(index) {
+            slides.style.transform = `translateX(-${index * slideWidth}px)`;
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+
+            teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
+            teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
+
+            currentIndex = index;
+        }
+
+        goToSlide(0);
+
+        let autoSlideInterval = setInterval(() => {
+            let nextIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(nextIndex);
+        }, 3000);
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                let nextIndex = (currentIndex + 1) % totalSlides;
+                goToSlide(nextIndex);
+            }, 3000);
+        }
+
+        function makeListHtml(items) {
+            return `<ul>` + items.map(item => {
+                const text = item.replace(/^\d+\.\s*/, '');
+                return `<li>${text}</li>`;
+            }).join('') + `</ul>`;
+        }
+    </script>
 </body>
+
 </html>
