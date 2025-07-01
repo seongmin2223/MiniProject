@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <base href="/MiniProject/">
     <meta charset="UTF-8">
     <title>성민</title>
-    <link rel="stylesheet" href="AllPersonalPage/CSS/personalpageStyle.css">
+    <link rel="stylesheet" href="../AllPersonalPage/CSS/personalpageStyle.css">
+    <style>
+        .picture{
+            background-image: url(../image/1570984691467-16.jpeg);
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,9 +19,7 @@
 </div>
 <section id="mainSection">
 
-    <div class="picture" id="card">
-        <img src="/image/1570984691467-16.jpeg" width="400px" alt="이미지">
-    </div>
+    <div class="picture" id="card"></div>
     <div class="introduce">
         <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
         <div><span class="name">김성민</span><span class="age">29세</span></div>
@@ -27,5 +30,5 @@
     </div>
 </section>
 </body>
-<script src="AllPersonalPage/JS/personalpageJS.js"></script>
+<script src="../AllPersonalPage/JS/personalpageJS.js"></script>
 </html>
