@@ -6,10 +6,10 @@
     <base href="/MiniProject/">
     <title>BUG BUSTERS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Gamja+Flower&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
 
@@ -290,122 +290,145 @@
             </ul>
         </div>
     </div>
-    <div class="container">
-        <div class="main">
-            <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-                <div class="bug-text text-center">
-                    <h1 class="display-5 fw-bold">Bug Busters !!</h1>
-                    <p class="fs-4 mx-auto" style="max-width: 900px;">처음엔 버그를 많이 만들겠지만, 점점 해결사로!</p>
-                </div>
+</div>
+<div class="container">
+    <div class="main">
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+            <div class="bug-text text-center">
+                <h1 class="display-5 fw-bold">Bug Busters !!</h1>
+                <p class="fs-4 mx-auto" style="max-width: 900px;">처음엔 버그를 많이 만들겠지만, 점점 해결사로!</p>
             </div>
-        </div>
-        <!-- <div class="banner">
-            <h1>BUG BUSTERS !!</h1>
-            <p>처음엔 버그들을 많이 만나겠지만, 점차 해결사로 !</p>
-        </div> -->
-
-        <div class="profile-section">
-            <div class="team_introduce" id="teamIntroduce"></div>
-            <div class="slider-area">
-                <div class="slider">
-                    <div class="slides" id="slides">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile1">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile2">
-                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Profile3">
-                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Profile4">
-                        <img src="https://randomuser.me/api/portraits/women/35.jpg" alt="Profile5">
-                    </div>
-                </div>
-                <div class="indicator" id="indicator"></div>
-            </div>
-
-            <div class="team_target" id="teamTarget"></div>
         </div>
     </div>
+    <!-- <div class="banner">
+        <h1>BUG BUSTERS !!</h1>
+        <p>처음엔 버그들을 많이 만나겠지만, 점차 해결사로 !</p>
+    </div> -->
 
-    <script>
-        const slides = document.getElementById('slides');
-        const indicator = document.getElementById('indicator');
-        const teamIntroduceDiv = document.getElementById('teamIntroduce');
-        const teamTargetDiv = document.getElementById('teamTarget');
-        const slider = document.querySelector('.slider');
+    <div class="profile-section">
+        <div class="team_introduce" id="teamIntroduce"></div>
+        <div class="slider-area">
+            <div class="slider">
+                <div class="slides" id="slides">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile1">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile2">
+                    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Profile3">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Profile4">
+                    <img src="https://randomuser.me/api/portraits/women/35.jpg" alt="Profile5">
+                </div>
+            </div>
+            <div class="indicator" id="indicator"></div>
+        </div>
 
-        const totalSlides = slides.children.length;
-        let currentIndex = 0;
+        <div class="team_target" id="teamTarget"></div>
+    </div>
+</div>
 
-        const teamIntroduces = [
-            "안녕하세요",
-            "저희는 00입니다",
-            "팀 소개 3번째 내용",
-            "팀 소개 4번째 내용",
-            "팀 소개 5번째 내용"
-        ];
+<script>
+    const slides = document.getElementById('slides');
+    const indicator = document.getElementById('indicator');
+    const teamIntroduceDiv = document.getElementById('teamIntroduce');
+    const teamTargetDiv = document.getElementById('teamTarget');
+    const slider = document.querySelector('.slider');
 
-        const teamTargets = [
-            "anjdi",
-            "ㅇㅇ",
-            "3. 000하기",
-            "4. 000하기",
-            "5. 000하기"
-        ];
+    const totalSlides = slides.children.length;
+    let currentIndex = 0;
 
-        function setSlidesWidth() {
-            const slideWidth = slides.children[0].clientWidth;
-            slides.style.width = `${slideWidth * totalSlides}px`;
-            return slideWidth;
-        }
+    const teamIntroduces = [
+        "안녕하세요",
+        "저희는 00입니다",
+        "팀 소개 3번째 내용",
+        "팀 소개 4번째 내용",
+        "팀 소개 5번째 내용"
+    ];
 
-        let slideWidth = setSlidesWidth();
+    const teamTargets = [
+        "anjdi",
+        "ㅇㅇ",
+        "3. 000하기",
+        "4. 000하기",
+        "5. 000하기"
+    ];
 
-        window.addEventListener('resize', () => {
-            slideWidth = setSlidesWidth();
-            goToSlide(currentIndex);
+    function setSlidesWidth() {
+        const slideWidth = slides.children[0].clientWidth;
+        slides.style.width = `${slideWidth * totalSlides}px`;
+        return slideWidth;
+    }
+
+    let slideWidth = setSlidesWidth();
+
+    window.addEventListener('resize', () => {
+        slideWidth = setSlidesWidth();
+        goToSlide(currentIndex);
+    });
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+            goToSlide(i);
+            resetAutoSlide();
         });
+        indicator.appendChild(dot);
+    }
+    const dots = indicator.querySelectorAll('.dot');
 
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.dataset.index = i;
-            dot.addEventListener('click', () => {
-                goToSlide(i);
-                resetAutoSlide();
-            });
-            indicator.appendChild(dot);
-        }
-        const dots = indicator.querySelectorAll('.dot');
+// dots 생성
+for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.dataset.index = i;
+    dot.addEventListener('click', () => {
+        goToSlide(i);
+        resetAutoSlide();
+    });
+    indicator.appendChild(dot);
+}
 
-        function goToSlide(index) {
-            slides.style.transform = `translateX(-${index * slideWidth}px)`;
+const dots = indicator.querySelectorAll('.dot');
 
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
+// 슬라이드 이동 함수
+function goToSlide(index) {
+    slides.style.transform = `translateX(-${index * slideWidth}px)`;
 
-            teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
-            teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
 
-            currentIndex = index;
-        }
+    teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
+    teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
 
-        goToSlide(0);
+    currentIndex = index;
+}
 
-        let autoSlideInterval = setInterval(() => {
+    goToSlide(0);
+
+    let autoSlideInterval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(nextIndex);
+    }, 3000);
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
             let nextIndex = (currentIndex + 1) % totalSlides;
             goToSlide(nextIndex);
         }, 3000);
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(nextIndex);
+    }, 3000);
+}
 
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(() => {
-                let nextIndex = (currentIndex + 1) % totalSlides;
-                goToSlide(nextIndex);
-            }, 3000);
-        }
-
-        function makeListHtml(items) {
-            return `<ul>` + items.map(item => {
-                const text = item.replace(/^\d+\.\s*/, '');
-                return `<li>${text}</li>`;
-            }).join('') + `</ul>`;
-        }
-    </script>
+function makeListHtml(items) {
+    return `<ul>` + items.map(item => {
+        const text = item.replace(/^\d+\.\s*/, '');
+        return `<li>${text}</li>`;
+    }).join('') + `</ul>`;
+}
+</script>
