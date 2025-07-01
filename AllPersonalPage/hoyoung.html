@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>호영</title>
+    <!--스타일시트-->
+    <link rel="stylesheet" href="../AllPersonalPage/CSS/personalpageStyle.css">
+    <style>
+        .picture{
+            background-image: url(../image/hoyoung.jpg);
+            background-size: cover;
+        }
+
+              @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
+        * {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .introduction {
+            display: block;
+            width: auto;
+            height: fit-content;
+            background-color: #f0e9f9;
+            font-size: 18px;
+            padding: 20px 25px;
+            margin: 20px 60px 0px 60px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @keyframes fade_up {
+            0% {
+                opacity: 0;
+                transform: translateY(10%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade_in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .introduce {
+            animation: fade_up 2.0s;
+            transition: transform 0.2s ease-out;
+        }
+
+        .picture {
+            animation: fade_in 0.7s;
+            height: 615px;
+        }
+
+        .introduce h1,
+        .introduce ul,
+        .introduce li {
+            font-size: 20px;
+        }
+
+        .tmi-section {
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 60px 0px 60px;
+        }
+
+        .collaboration_style {
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 60px 0px 60px;
+        }
+
+        .collaboration_style h1 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 4px solid #a6bfda;
+            color: #333;
+        }
+
+        .collaboration_style ul {
+            list-style-type: disc;
+            padding-left: 30px;
+        }
+
+        .collaboration_style li {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .tmi-section h1 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 4px solid #daa8e2;
+            color: #333;
+        }
+
+        .tmi-section ul {
+            list-style-type: disc;
+            padding-left: 30px;
+        }
+
+        .tmi-section li {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .role {
+            background-color: #a3c7ff;
+        }
+        
+        .mbti {
+            background-color: #ffa5b4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <span class="dropdown-toggle">팀원 보기</span>
+            <ul class="dropdown-menu">
+                <li>김성민</li>
+                <li>김민지</li>
+                <li>김제경</li>
+                <li>유호영</li>
+                <li>최수영</li>
+            </ul>
+        </div>
+    </div>
+    <!--상단 네비게이션이 오는 부분입니다.-->
+      <section id="mainSection">
+
+        <div class="picture" id="card">
+            <img src="../image/hoyoung.jpg" width="400px" height="615px" alt="이미지">
+        </div>
+        <div class="introduce">
+            <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
+            <div><span class="name">유호영</span><span class="age">만30세</span></div>
+            <div class="leftmargin20"><span class="role type">팀원</span><span class="mbti type">ISFJ</span></div>
+            <div><span class="introduction"> 두려움에 도전하자! </span></div>
+
+            <div class="collaboration_style">
+                <h1>협업 스타일</h1>
+                <ul>
+                    <li>브레인스토밍으로 아이디어를 자유롭게 내는 것을 좋아합니다.</li>
+                    <li>공과사는 별도! 팀원끼리 감정 소모 없도록 노력해요.</li>
+                    <li>리더지향 보다는 다함께 공동목표를 향해 나아가요.</li>
+                </ul>
+            </div>
+
+            <div class="tmi-section">
+                <h1>TMI</h1>
+                <ul>
+                    <li>레저 스포츠를 찍먹합니다. 스케이트보드, 보트, 무에타이, 서핑..</li>
+                    <li>좋아하는 작품은 해리포터 🌙✨</li>
+                    <li>영어와 스페인어를 공부중입니다.</li>
+                </ul>
+            </div>
+            <div class="monster"></div>
+            <span class="congratulation">0</span>
+        </div>
+    </section>
+    <!--JS-->
+    <script src="../AllPersonalPage/JS/personalpageJS.js"></script>
+</body>
+
+</html>
