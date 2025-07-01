@@ -38,3 +38,87 @@
         card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
         card.style.boxShadow = `0 0px 15px rgba(0, 0, 0, 0.4)`; // 원래 상태로 복원
     });
+    //몬스터 관련 구문입니다.
+    //introduce가 위치 변경 애니메이션을 가지고 있기 때문에 모든 요소가 전부 로딩되고 나서 위치를 받아옵니다.
+    document.addEventListener('DOMContentLoaded', () => {
+        // 변수에 요소 할당합니다.
+        const monster = document.querySelector('.monster');
+        const container = document.querySelector('.introduce');
+
+        // 몬스터 잡은 횟수
+        let clickCount = 0;
+        // 보이는지 여부
+        let visible = true;
+        // 반복 동작 중용
+        let intervalId = null;
+
+        // 함수입니다.
+        function moveMonsterRandomly() {
+            // 몬스터가 사라지지 않았으면 움직이지 않습니다.
+            if (!visible) return;
+
+            //부모 요소의 스타일입니다. 여러모로 깨질 가능성이 많아서 빡빡 모아둠
+            const style = window.getComputedStyle(container);
+            const paddingLeft = parseFloat(style.paddingLeft);
+            const paddingRight = parseFloat(style.paddingRight);
+            const paddingTop = parseFloat(style.paddingTop);
+            const paddingBottom = parseFloat(style.paddingBottom);
+
+            // 실제로 사용 가능한 공간
+            const parentWidth = container.clientWidth - paddingLeft - paddingRight;
+            const parentHeight = container.clientHeight - paddingTop - paddingBottom;
+
+            const monsterWidth = monster.offsetWidth;
+            const monsterHeight = monster.offsetHeight;
+
+
+            const maxX = Math.max(parentWidth - monsterWidth, 0);
+            const maxY = Math.max(parentHeight - monsterHeight, 0);
+
+            const randomX = paddingLeft + Math.random() * maxX;
+            const randomY = paddingTop + Math.random() * maxY;
+
+            monster.style.left = `${randomX}px`;
+            monster.style.top = `${randomY}px`;
+
+            monster.style.opacity = '1'; // 나타나기
+        }
+
+        function toggleVisibility() {
+            if (!visible) return;
+
+            if (monster.style.opacity === '1' || monster.style.opacity === '') {
+                monster.style.opacity = '0'; // 사라짐
+            } else {
+                moveMonsterRandomly(); // 위치 바꾸고 나타남
+            }
+        }
+
+        const congratulation = document.querySelector('.congratulation');
+        let hasShown = false;
+
+        monster.addEventListener('click', () => {
+            if (!visible) return;
+
+            clickCount++;
+            congratulation.style.display = 'inline-block';  // 보이기
+            congratulation.textContent = `${clickCount} Hit!`;
+            if (clickCount >= 1 && !hasShown) {
+                congratulation.classList.add('visible');
+                hasShown = true;
+            }
+            if (clickCount >= 10) {
+                visible = false;
+                monster.style.opacity = '0';
+                monster.style.pointerEvents = 'none'; // 클릭 무시
+                congratulation.textContent = '버그 소탕 완료!';
+                clearInterval(intervalId);
+            }
+        });
+
+        // 처음 10초 동안 몬스터 안 나타남
+        setTimeout(() => {
+            moveMonsterRandomly();
+            intervalId = setInterval(toggleVisibility, 1000);
+        }, 10000);
+    });
