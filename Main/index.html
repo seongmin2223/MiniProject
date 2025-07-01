@@ -319,10 +319,11 @@
             </div>
             <div class="indicator" id="indicator"></div>
         </div>
-
-        <div class="team_target" id="teamTarget"></div>
     </div>
-</div>
+            <div class="team_target" id="teamTarget"></div>
+        </div>
+    </div>
+</body>
 
 <script>
     const slides = document.getElementById('slides');
@@ -376,6 +377,19 @@
     }
     const dots = indicator.querySelectorAll('.dot');
 
+
+    function goToSlide(index) {
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+
+        teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
+        teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
+
+        currentIndex = index;
+    }
+
 // dots 생성
 for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('span');
@@ -404,6 +418,7 @@ function goToSlide(index) {
     currentIndex = index;
 }
 
+
     goToSlide(0);
 
     let autoSlideInterval = setInterval(() => {
@@ -417,18 +432,13 @@ function goToSlide(index) {
             let nextIndex = (currentIndex + 1) % totalSlides;
             goToSlide(nextIndex);
         }, 3000);
-function resetAutoSlide() {
-    clearInterval(autoSlideInterval);
-    autoSlideInterval = setInterval(() => {
-        let nextIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(nextIndex);
-    }, 3000);
-}
+    }
 
-function makeListHtml(items) {
-    return `<ul>` + items.map(item => {
-        const text = item.replace(/^\d+\.\s*/, '');
-        return `<li>${text}</li>`;
-    }).join('') + `</ul>`;
-}
+    function makeListHtml(items) {
+        return `<ul>` + items.map(item => {
+            const text = item.replace(/^\d+\.\s*/, '');
+            return `<li>${text}</li>`;
+        }).join('') + `</ul>`;
+    }
+
 </script>
