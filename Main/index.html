@@ -322,90 +322,91 @@
             <div class="team_target" id="teamTarget"></div>
         </div>
     </div>
+</body>
 
-    <script>
-        const slides = document.getElementById('slides');
-        const indicator = document.getElementById('indicator');
-        const teamIntroduceDiv = document.getElementById('teamIntroduce');
-        const teamTargetDiv = document.getElementById('teamTarget');
-        const slider = document.querySelector('.slider');
+<script>
+    const slides = document.getElementById('slides');
+    const indicator = document.getElementById('indicator');
+    const teamIntroduceDiv = document.getElementById('teamIntroduce');
+    const teamTargetDiv = document.getElementById('teamTarget');
+    const slider = document.querySelector('.slider');
 
-        const totalSlides = slides.children.length;
-        let currentIndex = 0;
+    const totalSlides = slides.children.length;
+    let currentIndex = 0;
 
-        const teamIntroduces = [
-            "안녕하세요",
-            "저희는 00입니다",
-            "팀 소개 3번째 내용",
-            "팀 소개 4번째 내용",
-            "팀 소개 5번째 내용"
-        ];
+    const teamIntroduces = [
+        "안녕하세요",
+        "저희는 00입니다",
+        "팀 소개 3번째 내용",
+        "팀 소개 4번째 내용",
+        "팀 소개 5번째 내용"
+    ];
 
-        const teamTargets = [
-            "anjdi",
-            "ㅇㅇ",
-            "3. 000하기",
-            "4. 000하기",
-            "5. 000하기"
-        ];
+    const teamTargets = [
+        "anjdi",
+        "ㅇㅇ",
+        "3. 000하기",
+        "4. 000하기",
+        "5. 000하기"
+    ];
 
-        function setSlidesWidth() {
-            const slideWidth = slides.children[0].clientWidth;
-            slides.style.width = `${slideWidth * totalSlides}px`;
-            return slideWidth;
-        }
+    function setSlidesWidth() {
+        const slideWidth = slides.children[0].clientWidth;
+        slides.style.width = `${slideWidth * totalSlides}px`;
+        return slideWidth;
+    }
 
-        let slideWidth = setSlidesWidth();
+    let slideWidth = setSlidesWidth();
 
-        window.addEventListener('resize', () => {
-            slideWidth = setSlidesWidth();
-            goToSlide(currentIndex);
+    window.addEventListener('resize', () => {
+        slideWidth = setSlidesWidth();
+        goToSlide(currentIndex);
+    });
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+            goToSlide(i);
+            resetAutoSlide();
         });
+        indicator.appendChild(dot);
+    }
+    const dots = indicator.querySelectorAll('.dot');
 
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.dataset.index = i;
-            dot.addEventListener('click', () => {
-                goToSlide(i);
-                resetAutoSlide();
-            });
-            indicator.appendChild(dot);
-        }
-        const dots = indicator.querySelectorAll('.dot');
+    function goToSlide(index) {
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
 
-        function goToSlide(index) {
-            slides.style.transform = `translateX(-${index * slideWidth}px)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
 
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
+        teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
+        teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
 
-            teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
-            teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
+        currentIndex = index;
+    }
 
-            currentIndex = index;
-        }
+    goToSlide(0);
 
-        goToSlide(0);
+    let autoSlideInterval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(nextIndex);
+    }, 3000);
 
-        let autoSlideInterval = setInterval(() => {
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
             let nextIndex = (currentIndex + 1) % totalSlides;
             goToSlide(nextIndex);
         }, 3000);
+    }
 
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(() => {
-                let nextIndex = (currentIndex + 1) % totalSlides;
-                goToSlide(nextIndex);
-            }, 3000);
-        }
-
-        function makeListHtml(items) {
-            return `<ul>` + items.map(item => {
-                const text = item.replace(/^\d+\.\s*/, '');
-                return `<li>${text}</li>`;
-            }).join('') + `</ul>`;
-        }
-    </script>
+    function makeListHtml(items) {
+        return `<ul>` + items.map(item => {
+            const text = item.replace(/^\d+\.\s*/, '');
+            return `<li>${text}</li>`;
+        }).join('') + `</ul>`;
+    }
+</script>
