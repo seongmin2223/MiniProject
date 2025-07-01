@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>민지</title>
+    <link rel="stylesheet" href="../AllPersonalPage/CSS/personalpageStyle.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
+        * {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .introduction {
+            display: block;
+            width: auto;
+            height: fit-content;
+            background-color: #f0e9f9;
+            font-size: 18px;
+            padding: 20px 25px;
+            margin: 20px 60px 0px 60px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @keyframes fade_up {
+            0% {
+                opacity: 0;
+                transform: translateY(10%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade_in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .introduce {
+            animation: fade_up 2.0s;
+            transition: transform 0.2s ease-out;
+        }
+
+        .picture {
+            animation: fade_in 0.7s;
+            height: 615px;
+        }
+
+        .introduce h1,
+        .introduce ul,
+        .introduce li {
+            font-size: 20px;
+        }
+
+        .tmi-section {
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 60px 0px 60px;
+        }
+
+        .collaboration_style {
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 60px 0px 60px;
+        }
+
+        .collaboration_style h1 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 4px solid #a6bfda;
+            color: #333;
+        }
+
+        .collaboration_style ul {
+            list-style-type: disc;
+            padding-left: 30px;
+        }
+
+        .collaboration_style li {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .tmi-section h1 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 4px solid #daa8e2;
+            color: #333;
+        }
+
+        .tmi-section ul {
+            list-style-type: disc;
+            padding-left: 30px;
+        }
+
+        .tmi-section li {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .role {
+            background-color: #a3c7ff;
+        }
+        
+        .mbti {
+            background-color: #ffa5b4;
+        }
+    </style>
+</head>
+
+<body>
+    <!--상단 네비게이션이 오는 부분입니다.-->
+    <div class="navbar">
+        <a href="Main/index.html">메인페이지</a>
+    </div>
+    <section id="mainSection">
+
+        <div class="picture" id="card">
+            <img src="../image/image.png" width="400px" height="615px" alt="이미지">
+        </div>
+        <div class="introduce">
+            <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
+            <div><span class="name">김민지</span><span class="age">24세</span></div>
+            <div class="leftmargin20"><span class="role type">팀원</span><span class="mbti type">ISFJ</span></div>
+            <div><span class="introduction">안녕하세요. 김민지입니다! 성실하게 최선을 다하겠습니다 🫡</span></div>
+
+            <div class="collaboration_style">
+                <h1>협업 스타일</h1>
+                <ul>
+                    <li>개발 컨벤션을 지켜가며 개발하는 것을 선호합니다 ☺️</li>
+                    <li>팀원 간의 커뮤니케이션을 중요하게 생각합니다 💭</li>
+                    <li>문제가 발생 시 팀원들과 함께 해결하려고 노력하는 것을 선호합니다 👍</li>
+                </ul>
+            </div>
+
+            <div class="tmi-section">
+                <h1>TMI</h1>
+                <ul>
+                    <li>저희집 강아지 이름은 둥이입니다 🐶</li>
+                    <li>디저트 먹는 걸 좋아합니다 🍰</li>
+                </ul>
+            </div>
+            <div class="monster"></div>
+            <span class="congratulation">0</span>
+        </div>
+    </section>
+</body>
+
+<script src="../AllPersonalPage/JS/personalpageJS.js"></script>
+
+</html>
