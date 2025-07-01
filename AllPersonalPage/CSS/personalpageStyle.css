@@ -18,6 +18,8 @@
 
         .name,
         .age {
+        .age,
+        .congratulation {
             font-family: "Black Han Sans", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -28,9 +30,9 @@
             font-weight: 400;
             font-style: normal;
         }
-        
+
         .role,
-        .mbti{
+        .mbti {
             font-family: "GmarketSansMedium", sans-serif;
             font-weight: 400;
         }
@@ -109,7 +111,7 @@
             /*글씨크기*/
             margin: 0px 7px 20px 5px;
             /*요소 외부 여백*/
-            color:#444;
+            color: #444;
         }
 
         .type {
@@ -167,8 +169,40 @@
         .introduce {
             animation: fade_up 2.0s;
             transition: transform 0.2s ease-out;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .picture {
             animation: fade_in 0.7s;
+        }
+
+        .monster {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-image: url(../../image/bugmonster.png);
+            cursor: pointer;
+            box-sizing: border-box;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .congratulation {
+            color: #444;
+            font-size: 25px;
+            display: none;
+            width: 760px;
+            height: auto;
+            text-align: center;
+            transition: opacity 0.5s ease-in;
+            margin-top: 30px;
+            margin-left: 10px;
+            background-color: #eee;
+            border-radius: 20px;
+        }
+
+        .congratulation.visible {
+            opacity: 1;
         }
