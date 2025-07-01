@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sooyoungPage</title>
+    <!--스타일시트-->
+    <link rel="stylesheet" href="./CSS/personalpageStyle.css">
+    <style>
+        .picture{
+            background-image: url(https://velog.velcdn.com/images/csy6100/post/59003e3e-48e3-4689-adb4-c8e253a659ad/image.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <span class="dropdown-toggle">팀원 보기</span>
+            <ul class="dropdown-menu">
+                <li>김성민</li>
+                <li>김민지</li>
+                <li>김제경</li>
+                <li>유호영</li>
+                <li>최수영</li>
+            </ul>
+        </div>
+    </div>
+    <!--상단 네비게이션이 오는 부분입니다.-->
+    <section id="mainSection">
+        <div class="picture" id="card"></div>
+        <div class="introduce">
+            <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
+            <div><span class="name">최수영</span><span class="age">만 25세</span></div>
+            <div class="leftmargin20"><span class="role type">조원</span><span class="mbti type">INFJ</span></div>
+            <div><span class="introduction">노베이스지만, 끝까지 완주해보겠습니다 !!
+                </span>
+            </div>
+            <div class="monster"></div>
+            <span class="congratulation">0</span>
+        </div>
+    </section>
+    <!--JS-->
+    <script src="./JS/personalpageJS.js"></script>
+</body>
+
+</html>
