@@ -278,16 +278,17 @@
 </head>
 
 <body>
-<div class="navbar">
-    <div class="dropdown">
-        <span class="dropdown-toggle">팀원 보기</span>
-        <ul class="dropdown-menu">
-            <li>김성민ㅁㅁㅁ</li>
-            <li>김민지</li>
-            <li>김제경</li>
-            <li>유호영</li>
-            <li>최수영</li>
-        </ul>
+    <div class="navbar">
+        <div class="dropdown">
+            <span class="dropdown-toggle">팀원 보기</span>
+            <ul class="dropdown-menu">
+                <li>김성민</li>
+                <li>김민지</li>
+                <li>김제경</li>
+                <li>유호영</li>
+                <li>최수영</li>
+            </ul>
+        </div>
     </div>
 </div>
 <div class="container">
@@ -375,17 +376,33 @@
     }
     const dots = indicator.querySelectorAll('.dot');
 
-    function goToSlide(index) {
-        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+// dots 생성
+for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.dataset.index = i;
+    dot.addEventListener('click', () => {
+        goToSlide(i);
+        resetAutoSlide();
+    });
+    indicator.appendChild(dot);
+}
 
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[index].classList.add('active');
+const dots = indicator.querySelectorAll('.dot');
 
-        teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
-        teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
+// 슬라이드 이동 함수
+function goToSlide(index) {
+    slides.style.transform = `translateX(-${index * slideWidth}px)`;
 
-        currentIndex = index;
-    }
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+
+    teamIntroduceDiv.innerHTML = `<h2>팀 소개</h2>${makeListHtml([teamIntroduces[index]])}`;
+    teamTargetDiv.innerHTML = `<h2>팀 목표</h2>${makeListHtml([teamTargets[index]])}`;
+
+    currentIndex = index;
+}
 
     goToSlide(0);
 
@@ -400,12 +417,18 @@
             let nextIndex = (currentIndex + 1) % totalSlides;
             goToSlide(nextIndex);
         }, 3000);
-    }
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(nextIndex);
+    }, 3000);
+}
 
-    function makeListHtml(items) {
-        return `<ul>` + items.map(item => {
-            const text = item.replace(/^\d+\.\s*/, '');
-            return `<li>${text}</li>`;
-        }).join('') + `</ul>`;
-    }
+function makeListHtml(items) {
+    return `<ul>` + items.map(item => {
+        const text = item.replace(/^\d+\.\s*/, '');
+        return `<li>${text}</li>`;
+    }).join('') + `</ul>`;
+}
 </script>
