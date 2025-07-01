@@ -1,0 +1,174 @@
+        /*폰트 설정입니다.*/
+        /*제목폰트*/
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
+
+        @font-face {
+            font-family: 'GangwonEdu_OTFBoldA';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .name,
+        .age {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .introduction {
+            font-family: 'GangwonEdu_OTFBoldA', serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .role,
+        .mbti{
+            font-family: "GmarketSansMedium", sans-serif;
+            font-weight: 400;
+        }
+
+        /*기본적으로 설정된 폰트 사이즈 등에 의해 CSS가 망가지는 것을 방지합니다.*/
+        * {
+            font-size: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        /*메인 섹션에 대한 속성입니다.*/
+        #mainSection {
+            width: 1280px;
+            /*이 섹션의 가로길이*/
+            height: auto;
+            /*가운데 정렬*/
+            display: flex;
+            /*안에 있는 요소를 나눠서 넣습니다.*/
+            margin: 0 auto;
+            /*가운데 정렬입니다.*/
+        }
+
+        /*이미지 영역에 대한 속성입니다.*/
+        .picture {
+            /*사진 영역입니다.*/
+            border-radius: 10px;
+            /*모서리 둥글기*/
+            width: 400px;
+            /*너비*/
+            height: 560px;
+            /*길이*/
+            background-color: #ddd;
+            /*테스트 색상*/
+            transform-style: preserve-3d;
+            /*이 객체를 3d와 같이 사용함을 설정함.(3d모양으로 모양이 변화하게끔)*/
+            perspective: 0px;
+            /*z축(원근)의 정도입니다.*/
+            transition: transform 0.1s ease-out;
+            /*움직이는 모양과 관련된 설정입니다. 0.1초, 뒤로 갈수록 천천히 움직이며*/
+            position: relative;
+            /*포지션 설정합니다.*/
+            overflow: hidden;
+            /*picture 안에 picture의 크기보다 큰 요소가 들어있으면, 넘치는 부분은 보이지 않게끔 합니다.*/
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+            /*박스에 그림자를 넣습니다.(세로 이동 0px, 가로 이동 0px, 15px만큼 번짐, 불투명도 40% 까만색)*/
+        }
+
+        .introduce {
+            width: 820px;
+            /*가로 길이*/
+            height: fit-content;
+            /*내부 요소의 길이에 맞춥니다.*/
+            padding: 30px 20px;
+            /*요소 안에 있는 여백을 조절합니다.*/
+            margin-left: 20px;
+            /*좌측 gap*/
+            background-color: #fff;
+            /*테스트용 배경색*/
+            border-radius: 10px;
+            /*모서리 둥글기*/
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            font-size: 40px;
+            /*폰트 사이즈*/
+            margin: 0px 0px 10px 10px;
+            /*상우하좌 외부 여백 설정*/
+        }
+
+        .age {
+            display: inline-block;
+            /*display 를 inline-block으로 바꿉니다. inline과 block 형식의 특징을 둘 다 가집니다.*/
+            font-size: 17px;
+            /*글씨크기*/
+            margin: 0px 7px 20px 5px;
+            /*요소 외부 여백*/
+            color:#444;
+        }
+
+        .type {
+            display: inline-block;
+            background-color: #aaa;
+            height: auto;
+            /*auto로 설정함으로 안쪽 글자에 꼭 맞는 크기가 되도록 합니다.*/
+            width: auto;
+            font-size: 15px;
+            padding: 5px 12px;
+            /*내부 여백을 설정합니다.*/
+            color: white;
+            border-radius: 20px;
+            margin: 0px 0px 0px 10px;
+        }
+
+        .leftmargin20 {
+            margin-left: 20px;
+        }
+
+        .introduction {
+            display: inline-block;
+            width: 700px;
+            height: fit-content;
+            background-color: #eee;
+            color: #333;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 20px 60px 0px 60px;
+        }
+
+        @keyframes fade_up {
+            0% {
+                opacity: 0;
+                transform: translateY(10%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade_in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .introduce {
+            animation: fade_up 2.0s;
+            transition: transform 0.2s ease-out;
+        }
+
+        .picture {
+            animation: fade_in 0.7s;
+        }
