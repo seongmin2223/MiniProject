@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>탭 이름 ~(^^~)</title>
+    <!--스타일시트-->
+    <link rel="stylesheet" href="./CSS/personalpageStyle.css">
+    <style>
+        .picture{
+            background-image: url(../image/rlawprud.png);
+            background-size: cover;
+        }
+        .introduction:first-child{
+            background-color: #ffc2c2;
+        }
+        .introduction:last-child{
+            background-color: #c65c5c;
+            color: #fff;
+        }
+        .type {
+            background-color: #bb3333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <span class="dropdown-toggle">팀원 보기</span>
+            <ul class="dropdown-menu">
+                <li>김성민</li>
+                <li>김민지</li>
+                <li>김제경</li>
+                <li>유호영</li>
+                <li>최수영</li>
+            </ul>
+        </div>
+    </div>
+    <!--상단 네비게이션이 오는 부분입니다.-->
+    <section id="mainSection">
+        <div class="picture" id="card"></div>
+        <div class="introduce">
+            <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
+            <div><span class="name">김제경</span><span class="age">22살</span></div>
+            <div class="leftmargin20"><span class="role type">조원</span><span class="mbti type">INTP</span></div>
+            <div class="introduction-box">
+                <span class="introduction">
+                    안녕하세요! AI와 공존하는 개발자를 꿈꾸는 김제경입니다!
+                </span>
+                <span class="introduction">
+                    저는 소프트웨어 융합 학과에서 한창 공부하고 있는 휴학생입니다. <br>
+                    허리 디스크 때문에 잠시 휴학했지만, 제가 좋아하는 공부를 하고 있다는 생각을 하면 마음이 풍족해져요!
+                </span>
+                <span class="introduction">
+                    제가 이렇게 IT 계열로 진로를 결정하게 된 이유는 고등학교 시절 기술가정 선생님 덕분이에요. <br>
+                    방과 후 학습으로 신청했던 피지컬 컴퓨팅이 재미있었고, 선생님도 잘한다고 칭찬해 주셨었거든요! <br>
+                    그 후로 IT 계열에 흥미가 생겨서 이렇게 부트캠프까지 신청하게 되었네요.
+                </span>
+                <span class="introduction">
+                    배워가는 마음으로 열심히 참여해 보겠습니다!
+                </span>
+            </div>
+            <div class="monster"></div>
+            <span class="congratulation">0</span>
+        </div>
+    </section>
+    <!--JS-->
+    <script src="./JS/personalpageJS.js"></script>
+</body>
+
+</html>

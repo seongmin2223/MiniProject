@@ -107,7 +107,7 @@
                 congratulation.classList.add('visible');
                 hasShown = true;
             }
-            if (clickCount >= 10) {
+            if (clickCount >= 5) {
                 visible = false;
                 monster.style.opacity = '0';
                 monster.style.pointerEvents = 'none'; // 클릭 무시
@@ -116,9 +116,9 @@
             }
         });
 
-        // 처음 10초 동안 몬스터 안 나타남
+        // 처음 5초 동안 몬스터 안 나타남
         setTimeout(() => {
             moveMonsterRandomly();
             intervalId = setInterval(toggleVisibility, 1000);
-        }, 10000);
+        }, 5000);
     });
