@@ -4,129 +4,7 @@
     <base href="/MiniProject/">
     <meta charset="UTF-8">
     <title>성민</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
-                 *{
-          font-family: "Black Han Sans", sans-serif;
-          font-weight: 400;
-          font-style: normal;
-        }
-        .navbar{
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #333;
-            overflow: hidden;
-            display : flex;
-            justify-content : center
-        }
-        .navbar a {
-              float: left;
-              display: block;
-              color: #f2f2f2;
-              text-align: center;
-              padding: 14px 20px;
-              text-decoration: none;
-              font-size  : 15px;
-        }
-        .navbar a:hover {
-              background-color : white;
-              color: green;
-        }
-        /*기본적으로 설정된 폰트 사이즈 등에 의해 CSS가 망가지는 것을 방지합니다.*/
-        * {
-            font-size: 0;
-            padding: 0;
-            margin: 0;
-        }
-
-        /*메인 섹션에 대한 속성입니다.*/
-        #mainSection {
-            width: 1280px;                  /*이 섹션의 가로길이*/
-            height: auto;                   /*가운데 정렬*/
-            background-color: #99f;       /*테스트용 배경색*/
-            display: flex;                  /*안에 있는 요소를 나눠서 넣습니다.*/
-            margin: 0 auto;                 /*가운데 정렬입니다.*/
-        }
-        /*이미지 영역에 대한 속성입니다.*/
-        .picture {                              /*사진 영역입니다.*/
-            border-radius: 10px;                /*모서리 둥글기*/
-            width: 400px;                       /*너비*/
-            height: 560px;                      /*길이*/
-            background-color: #ddd;           /*테스트 색상*/
-            transform-style: preserve-3d;       /*이 객체를 3d와 같이 사용함을 설정함.(3d모양으로 모양이 변화하게끔)*/
-            perspective: 0px;                   /*z축(원근)의 정도입니다.*/
-            transition: transform 0.1s ease-out;    /*움직이는 모양과 관련된 설정입니다. 0.1초, 뒤로 갈수록 천천히 움직이며*/
-            position: relative;                     /*포지션 설정합니다.*/
-            overflow: hidden;                       /*picture 안에 picture의 크기보다 큰 요소가 들어있으면, 넘치는 부분은 보이지 않게끔 합니다.*/
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);  /*박스에 그림자를 넣습니다.(세로 이동 0px, 가로 이동 0px, 15px만큼 번짐, 불투명도 40% 까만색)*/
-        }
-
-        .introduce {
-            width: 820px;               /*가로 길이*/
-            height: fit-content;        /*내부 요소의 길이에 맞춥니다.*/
-            padding: 30px 20px;         /*요소 안에 있는 여백을 조절합니다.*/
-            margin-left: 20px;          /*좌측 gap*/
-            background-color: #ddd;   /*테스트용 배경색*/
-            border-radius: 10px;        /*모서리 둥글기*/
-        }
-
-        .name {
-            font-size: 30px;            /*폰트 사이즈*/
-            margin: 0px 0px 10px 10px;  /*상우하좌 외부 여백 설정*/
-        }
-        .age{
-            display: inline-block;      /*display 를 inline-block으로 바꿉니다. inline과 block 형식의 특징을 둘 다 가집니다.*/
-            font-size: 17px;            /*글씨크기*/
-            margin: 0px 7px 20px 5px;   /*요소 외부 여백*/
-        }
-
-        .type {
-            display: inline-block;
-            background-color: #aaa;
-            height: auto;               /*auto로 설정함으로 안쪽 글자에 꼭 맞는 크기가 되도록 합니다.*/
-            width: auto;
-            font-size: 15px;
-            padding: 5px 12px;          /*내부 여백을 설정합니다.*/
-            color: white;
-            border-radius: 20px;
-            margin: 0px 0px 0px 10px;
-        }
-        .leftmargin20{
-            margin-left: 20px;
-        }
-
-        .introduction { /**/
-            display: inline-block;
-            width: 700px;
-            height: fit-content;
-            background-color: #bbb;
-            font-size: 20px;
-            margin: 20px 60px 0px 60px;
-        }
-
-        @keyframes fade_up {
-            0% {
-                opacity: 0;
-                transform: translateY(10%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fade_in {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        .introduce {
-            animation: fade_up 2.0s;
-            transition: transform 0.2s ease-out;
-        }
-        .picture{
-            animation: fade_in 0.7s;
-        }
-    </style>
+    <link rel="stylesheet" href="AllPersonalPage/CSS/personalpageStyle.css">
 </head>
 
 <body>
@@ -144,50 +22,10 @@
         <div><span class="name">김성민</span><span class="age">29세</span></div>
         <div class="leftmargin20"><span class="role type">조장</span><span class="mbti type">ENFP</span></div>
         <div><span class="introduction">열심히하겠습니다<br><br>TMI : 야구 좋아하고, 축구도 좋아함</span></div>
+        <div class="monster"></div>
+        <span class="congratulation">0</span>
     </div>
 </section>
 </body>
-<script>
-    // card 라는 이름의 객체가 있는데, 이 객체는 문서의 #card입니다.
-    const card = document.getElementById('card');
-
-    // 마우스가 움직이는 걸 감지함. e = event. 이 이벤트가 일어나면 {...}의 구문이 실행됨.
-    card.addEventListener('mousemove', (e) => {
-        //객체가 어디에, 어떤 크기로 존재하는지 알아내야 함.
-        //하단의 구문은 마우스가 어디에 있는가에 따라 회전하는 각도가 다르기 때문에, 마우스의 위치를 알아내기 위해 사용한 함수임.
-        //해당 함수는 객체의 크기(내부, padding, border)와 위치를 사각형의 형태로 반환함.
-        const rect = card.getBoundingClientRect();
-
-        //마우스 위치 기준으로 중심에서의 거리 계산.
-        //이 구문은 마우스가 카드 위에서 움직일 때만 실행됩니다.
-        //e.clientX, e.clientY 는 모두 지금 마우스가 >>브라우저 전체<<에서 어디에 있는지 반환합니다.
-        //따라서, #card가 위, 왼쪽에서 얼마나 떨어졌는지를 알아내어 빼 주면 마우스가 #card의 어디에 위치하고 있는지 알 수 있습니다.
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        // 반환된 사각형의 가로세로를 반으로 나누어 사각형의 중앙을 찾습니다.
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        // retateX, rotateY의 값만큼 회전시킬 겁니다.
-        // y - centerY -> 중앙에서 얼마나 벗어나 있는지 확인합니다.
-        // "/50" 회전하는 값을 줄여 덜 움직이게끔 합니다.
-        const rotateX = -(y - centerY) / 50;
-        const rotateY = (x - centerX) / 50;
-
-        //그림자가 움직이는 효과를 넣음. Y는 움직이지 않는 코드.
-        const shadowX = (x - centerX) / 50;
-
-        // 회전은 이 구문에서 실행됩니다.
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        card.style.boxShadow = `${-shadowX}px 0px 15px rgba(0, 0, 0, 0.4)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        // 마우스가 벗어나면 원위치
-        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
-        card.style.boxShadow = `0 0px 15px rgba(0, 0, 0, 0.4)`; // 원래 상태로 복원
-    });
-</script>
-
+<script src="AllPersonalPage/JS/personalpageJS.js"></script>
 </html>
