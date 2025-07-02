@@ -12,6 +12,8 @@
             background-size: cover;
         }
 
+
+
         .go-main {
             position: absolute;
             top: 15px;
@@ -20,6 +22,7 @@
 
 
         .go-main .btn {
+            font-family: "Black Han Sans", sans-serif;
             display: inline-block;
             background-color: white;
             color: black;
@@ -33,21 +36,22 @@
         .go-main .btn:hover {
             background-color: gray;
         }
-    </style>
 
+       
     </style>
 </head>
 
 <body>
     <div class="navbar">
         <div class="dropdown">
-            <span class="dropdown-toggle">팀원 보기</span>
+            <div>
+                <span class="dropdown-toggle">팀원 보기</span>
+            </div>
             <ul class="dropdown-menu">
-                <li>김성민</li>
-                <li>김민지</li>
-                <li>김제경</li>
-                <li>유호영</li>
-                <li>최수영</li>
+                <li><a href="../AllPersonalPage/seongminsPage.html">김성민</a></li>
+                <li><a href="../AllPersonalPage/minjiPage.html">김민지</a></li>
+                <li><a href="../AllPersonalPage/jegeoyngPage.html">김제경</a></li>
+                <li><a href="../AllPersonalPage/hoyoung.html">유호영</a></li>
             </ul>
         </div>
         <div class="go-main">
@@ -62,12 +66,12 @@
             <div><span class="name">최수영</span><span class="age">만 25세</span></div>
             <div class="leftmargin20"><span class="role type">조원</span><span class="mbti type">INFJ / 선의의 옹호자!</span>
             </div>
-            <div><span class="introduction">노베이스지만, 끝까지 완주해보겠습니다 </span>   </div>
-            <div><span class="introduction">조용한 열정가, 깊은 공감력의 소유자 </span>   </div>
-            <div><span class="introduction">10살 고양이 같은 강아지 보유 </span>   </div>
-                <div class="monster"></div>
-                <span class="congratulation">0</span>
-            </div>
+            <div><span class="introduction">노베이스지만, 끝까지 완주해보겠습니다 </span> </div>
+            <div><span class="introduction">조용한 열정가, 깊은 공감력의 소유자 </span> </div>
+            <div><span class="introduction">10살 고양이 같은 강아지 보유 </span> </div>
+            <div class="monster"></div>
+            <span class="congratulation">0</span>
+        </div>
     </section>
     <!--JS-->
     <script src="./JS/personalpageJS.js"></script>
