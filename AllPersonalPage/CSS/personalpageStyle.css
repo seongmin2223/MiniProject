@@ -244,6 +244,8 @@
         }
         .dropdown-menu li a {
             font-size: 15px;
+            text-decoration: none;
+            color: #000;
         }
 
         .dropdown-menu li {
