@@ -123,7 +123,7 @@
             margin-bottom: 16px;
             position: relative;
             padding-bottom: 6px;
-            font-size: 25px;
+            font-size: 30px;
         }
 
 
@@ -294,8 +294,8 @@
         }
 
         .navbar {
-            background-color: #222;
-            padding: 15px;
+            background-color: #fff;
+            padding: 30px;
             padding-left: 150px;
             display: flex;
             align-items: center;
@@ -446,18 +446,102 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="dropdown">
-            <span class="dropdown-toggle">팀원 보기</span>
-            <ul class="dropdown-menu">
-                <li><a href="../AllPersonalPage/seongminsPage.html">김성민</a></li>
-                <li><a href="../AllPersonalPage/minjiPage.html">김민지</a></li>
-                <li><a href="../AllPersonalPage/jegeoyngPage.html">김제경</a></li>
-                <li><a href="../AllPersonalPage/hoyoung.html">유호영</a></li>
-                <li><a href="../AllPersonalPage/sooyoungPage.html">최수영</a></li>
-            </ul>
-        </div>
+<style>
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* 버튼 간격 조정 */
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .dropdown-toggle {
+        cursor: pointer;
+        padding: 10px 15px;
+        background-color: #202020;
+        color: white;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        top: 40px;
+        left: 0;
+        min-width: 100px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+
+  .nav-button button {
+    background-color: transparent;  /* 배경색 제거 */
+    color: #2c3e50;                /* 글자색 진하게 변경 */
+    padding: 10px 24px;
+    font-size: 40px;               /* 글자 크기 키움 */
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    text-align: center;            /* 텍스트 중앙 정렬 */
+    box-shadow: none;
+  }
+
+  .nav-button button:hover {
+    background-color: transparent; /* 호버 시에도 배경 없음 */
+    color: #3498db;                /* 마우스 올리면 글자색만 바꿈 */
+  }
+</style>
+
+<div class="navbar-container">
+  <div class="navbar">
+    <div class="dropdown">
+      <span class="dropdown-toggle">팀원 보기</span>
+      <ul class="dropdown-menu">
+        <li><a href="../AllPersonalPage/seongminsPage.html">김성민</a></li>
+        <li><a href="../AllPersonalPage/minjiPage.html">김민지</a></li>
+        <li><a href="../AllPersonalPage/jegeoyngPage.html">김제경</a></li>
+        <li><a href="../AllPersonalPage/hoyoung.html">유호영</a></li>
+        <li><a href="../AllPersonalPage/sooyoungPage.html">최수영</a></li>
+      </ul>
     </div>
+  </div>
+
+  <div class="nav-button">
+    <button onclick="location.href='../AllPersonalPage/visitor.html'">방명록</button>
+  </div>
+</div>
+
     <div class="container">
         <div class="main">
             <div class="p-5 mb-4 bg-body-tertiary rounded-3">
