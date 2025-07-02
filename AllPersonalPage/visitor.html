@@ -64,6 +64,10 @@
         .guestbook-entry strong {
             color: #4CAF50;
         }
+        .no-resize {
+          resize: none;        /* 크기 조절 비활성화 */
+          overflow: auto;      /* 내용이 넘칠 경우 스크롤 */
+        }
     </style>
 </head>
 
@@ -76,7 +80,7 @@
         <input type="text" id="name" required>
 
         <label for="message">메시지</label>
-        <textarea id="message" rows="4" required></textarea>
+        <textarea class="no-resize" maxlength="200" id="message" rows="4" required></textarea>
 
         <button type="submit">작성하기</button>
     </form>
