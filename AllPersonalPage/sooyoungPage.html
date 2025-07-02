@@ -7,10 +7,34 @@
     <!--스타일시트-->
     <link rel="stylesheet" href="./CSS/personalpageStyle.css">
     <style>
-        .picture{
+        .picture {
             background-image: url(https://velog.velcdn.com/images/csy6100/post/59003e3e-48e3-4689-adb4-c8e253a659ad/image.jpg);
             background-size: cover;
         }
+
+        .go-main {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+
+        .go-main .btn {
+            display: inline-block;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .go-main .btn:hover {
+            background-color: gray;
+        }
+    </style>
+
     </style>
 </head>
 
@@ -26,6 +50,9 @@
                 <li>최수영</li>
             </ul>
         </div>
+        <div class="go-main">
+            <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
+        </div>
     </div>
     <!--상단 네비게이션이 오는 부분입니다.-->
     <section id="mainSection">
@@ -33,16 +60,22 @@
         <div class="introduce">
             <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
             <div><span class="name">최수영</span><span class="age">만 25세</span></div>
-            <div class="leftmargin20"><span class="role type">조원</span><span class="mbti type">INFJ</span></div>
-            <div><span class="introduction">노베이스지만, 끝까지 완주해보겠습니다 !!
-                </span>
+            <div class="leftmargin20"><span class="role type">조원</span><span class="mbti type">INFJ / 선의의 옹호자!</span>
             </div>
-            <div class="monster"></div>
-            <span class="congratulation">0</span>
-        </div>
+            <div><span class="introduction">노베이스지만, 끝까지 완주해보겠습니다 </span>   </div>
+            <div><span class="introduction">조용한 열정가, 깊은 공감력의 소유자 </span>   </div>
+            <div><span class="introduction">10살 고양이 같은 강아지 보유 </span>   </div>
+                <div class="monster"></div>
+                <span class="congratulation">0</span>
+            </div>
     </section>
     <!--JS-->
     <script src="./JS/personalpageJS.js"></script>
+    <!-- section 닫히기 전에 삽입 -->
+    <div class="go-main">
+        <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
+    </div>
+
 </body>
 
 </html>

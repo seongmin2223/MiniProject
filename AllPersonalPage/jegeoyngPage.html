@@ -7,19 +7,44 @@
     <!--스타일시트-->
     <link rel="stylesheet" href="./CSS/personalpageStyle.css">
     <style>
-        .picture{
+        .picture {
             background-image: url(../image/rlawprud.png);
             background-size: cover;
         }
-        .introduction:first-child{
+
+        .introduction:first-child {
             background-color: #ffc2c2;
         }
-        .introduction:last-child{
+
+        .introduction:last-child {
             background-color: #c65c5c;
             color: #fff;
         }
+
         .type {
             background-color: #bb3333;
+        }
+
+        .go-main {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+
+        .go-main .btn {
+            display: inline-block;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .go-main .btn:hover {
+            background-color: gray;
         }
     </style>
 </head>
@@ -35,6 +60,9 @@
                 <li>유호영</li>
                 <li>최수영</li>
             </ul>
+        </div>
+        <div class="go-main">
+            <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
         </div>
     </div>
     <!--상단 네비게이션이 오는 부분입니다.-->
@@ -67,6 +95,9 @@
     </section>
     <!--JS-->
     <script src="./JS/personalpageJS.js"></script>
+    <div class="go-main">
+        <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
+    </div>
 </body>
 
 </html>

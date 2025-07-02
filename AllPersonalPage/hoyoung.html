@@ -7,18 +7,19 @@
     <!--스타일시트-->
     <link rel="stylesheet" href="../AllPersonalPage/CSS/personalpageStyle.css">
     <style>
-        .picture{
+        .picture {
             background-image: url(../image/hoyoung.jpg);
             background-size: cover;
         }
 
-              @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
+
         * {
             font-family: "Black Han Sans", sans-serif;
             font-weight: 400;
             font-style: normal;
         }
-        
+
         .introduction {
             display: block;
             width: auto;
@@ -132,9 +133,31 @@
         .role {
             background-color: #570831;
         }
-        
+
         .mbti {
             background-color: #f8db74;
+        }
+
+        .go-main {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+
+        .go-main .btn {
+            display: inline-block;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .go-main .btn:hover {
+            background-color: gray;
         }
     </style>
 </head>
@@ -151,9 +174,12 @@
                 <li>최수영</li>
             </ul>
         </div>
+        <div class="go-main">
+            <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
+        </div>
     </div>
     <!--상단 네비게이션이 오는 부분입니다.-->
-      <section id="mainSection">
+    <section id="mainSection">
 
         <div class="picture" id="card">
             <img src="../image/hoyoung.jpg" width="400px" height="615px" alt="이미지">
@@ -187,6 +213,9 @@
     </section>
     <!--JS-->
     <script src="../AllPersonalPage/JS/personalpageJS.js"></script>
+    <div class="go-main">
+        <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
+    </div>
 </body>
 
 </html>

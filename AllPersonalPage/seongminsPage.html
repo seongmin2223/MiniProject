@@ -1,34 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>성민</title>
     <link rel="stylesheet" href="../AllPersonalPage/CSS/personalpageStyle.css">
     <style>
-        .picture{
+        .picture {
             background-image: url(../image/1570984691467-16.jpeg);
             background-size: cover;
+        }
+
+        .go-main {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+
+        .go-main .btn {
+            display: inline-block;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .go-main .btn:hover {
+            background-color: gray;
         }
     </style>
 </head>
 
 <body>
-<!--상단 네비게이션이 오는 부분입니다.-->
-<div class="navbar">
-    <a href="Main/index.html">메인페이지</a>
-</div>
-<section id="mainSection">
-
-    <div class="picture" id="card"></div>
-    <div class="introduce">
-        <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
-        <div><span class="name">김성민</span><span class="age">29세</span></div>
-        <div class="leftmargin20"><span class="role type">조장</span><span class="mbti type">ENFP</span></div>
-        <div><span class="introduction">열심히 하겠습니다<br><br>TMI : 야구 좋아하고, 축구도 좋아함. 낯가려요 샤이보이. 에이핑크 팬~ 쉬는 날에는 집콕하면서 메이플을 합니다. 넥슨 입사를 목표로 열심히 정진하고 있습니다.</span></div>
-        <div class="monster"></div>
-        <span class="congratulation">0</span>
+    <!--상단 네비게이션이 오는 부분입니다.-->
+    <div class="navbar">
+        <div class="dropdown">
+            <span class="dropdown-toggle">팀원 보기</span>
+            <ul class="dropdown-menu">
+                <li>김성민</li>
+                <li>김민지</li>
+                <li>김제경</li>
+                <li>유호영</li>
+                <li>최수영</li>
+            </ul>
+        </div>
+        <div class="go-main">
+            <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
+        </div>
     </div>
-</section>
+    <section id="mainSection">
+
+        <div class="picture" id="card"></div>
+        <div class="introduce">
+            <!--span에 class를 넣어 JS 등을 사용하여 값을 변경할 수 있게 만들었습니다.-->
+            <div><span class="name">김성민</span><span class="age">29세</span></div>
+            <div class="leftmargin20"><span class="role type">조장</span><span class="mbti type">ENFP</span></div>
+            <div><span class="introduction">열심히 하겠습니다<br><br>TMI : 야구 좋아하고, 축구도 좋아함. 낯가려요 샤이보이. 에이핑크 팬~ 쉬는 날에는 집콕하면서
+                    메이플을 합니다. 넥슨 입사를 목표로 열심히 정진하고 있습니다.</span></div>
+            <div class="monster"></div>
+            <span class="congratulation">0</span>
+        </div>
+    </section>
 </body>
 <script src="../AllPersonalPage/JS/personalpageJS.js"></script>
+<div class="go-main">
+    <a href="../Main/index.html" class="btn">메인으로 돌아가기</a>
+</div>
+
 </html>
