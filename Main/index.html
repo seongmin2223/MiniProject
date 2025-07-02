@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Gamja+Flower&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Trade+Winds&display=swap');
 
@@ -92,7 +93,7 @@
 
         .team_introduce,
         .team_target {
-             width: 280px;
+            width: 280px;
             height: auto;
             min-height: 260px;
             background: linear-gradient(145deg, #fafafa, #e6e6e6);
@@ -113,31 +114,31 @@
 
         .team_introduce h2,
         .team_target h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #222;
-            border-bottom: 2px solid #666;
-            padding-bottom: 8px;
-            position: relative;
-            display: inline-block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-
-            display: inline-block;
+            font-size: 20px;
+            color: #333;
+            display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
-            margin: 0 auto 20px auto;
-            transform: none;
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 6px;
+            font-size: 25px;
         }
 
-        .team_introduce p,
-        .team_target p {
-            font-size: 15px;
+
+        .team_introduce p {
+            font-size: 18px;
             color: #555;
             line-height: 1.6;
         }
+
+        .team_target p {
+            font-size: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+
         .slider {
             width: 400px;
             height: 500px;
@@ -240,9 +241,11 @@
 
         .team_introduce .icon,
         .team_target .icon {
-            font-size: 20px;
+            font-size: 18px;
+            color: #ff7a00;
             margin-right: 4px;
         }
+
         .team_introduce:hover,
         .team_target:hover {
             transform: translateY(-6px);
@@ -330,7 +333,7 @@
             cursor: pointer;
         }
 
-        .dropdown-menu li a{
+        .dropdown-menu li a {
             color: #000;
             text-decoration: none;
         }
@@ -361,6 +364,83 @@
             font-family: 'Gamja Flower', cursive;
             color: white;
             font-size: 3em !important;
+        }
+
+        .team_introduce h2::after,
+        .team_target h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            border-radius: 1px;
+        }
+
+        .team_introduce p strong.pass {
+            color: #E94E1B;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+            font-weight: 200;
+        }
+
+        .team_introduce p strong.fun {
+            color: #F2C94C;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+            font-weight: 200;
+        }
+
+        .team_introduce p strong.comm {
+            color: #3498DB;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+            font-weight: 200;
+        }
+
+        .team_introduce p strong.grow {
+            color: #27AE60;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+            font-weight: 200;
+        }
+
+        .team_introduce p strong.dili {
+            color: #7F8C8D;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+            font-weight: 200;
+        }
+
+
+
+        .team_target p {
+            font-size: 20px;
+            color: #555;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: 0.03em;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            display: inline-block;
+            margin: 6px 0;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        .team_target p:hover {
+            background: #f0f0f0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #444;
         }
     </style>
 </head>
@@ -397,11 +477,15 @@
             <div class="slider-area">
                 <div class="slider">
                     <div class="slides" id="slides">
-                        <a href="../AllPersonalPage/seongminsPage.html"><img src="../image/1570984691467-16.jpeg" alt="Profile1"></a>
+                        <a href="../AllPersonalPage/seongminsPage.html"><img src="../image/1570984691467-16.jpeg"
+                                alt="Profile1"></a>
                         <a href="../AllPersonalPage/minjiPage.html"><img src="../image/image.png" alt="Profile2"></a>
-                        <a href="../AllPersonalPage/jegeoyngPage.html"><img src="../image/rlawprud.png" alt="Profile3"></a>
+                        <a href="../AllPersonalPage/jegeoyngPage.html"><img src="../image/rlawprud.png"
+                                alt="Profile3"></a>
                         <a href="../AllPersonalPage/hoyoung.html"><img src="../image/hoyoung.jpg" alt="Profile4"></a>
-                        <a href="../AllPersonalPage/sooyoungPage.html"><img src="https://velog.velcdn.com/images/csy6100/post/59003e3e-48e3-4689-adb4-c8e253a659ad/image.jpg" alt="Profile5"></a>
+                        <a href="../AllPersonalPage/sooyoungPage.html"><img
+                                src="https://velog.velcdn.com/images/csy6100/post/59003e3e-48e3-4689-adb4-c8e253a659ad/image.jpg"
+                                alt="Profile5"></a>
                     </div>
                 </div>
                 <div class="indicator" id="indicator"></div>
@@ -414,97 +498,99 @@
 
 <script>
     const slides = document.getElementById('slides');
-        const indicator = document.getElementById('indicator');
-        const teamIntroduceDiv = document.getElementById('teamIntroduce');
-        const teamTargetDiv = document.getElementById('teamTarget');
-        const slider = document.querySelector('.slider');
+    const indicator = document.getElementById('indicator');
+    const teamIntroduceDiv = document.getElementById('teamIntroduce');
+    const teamTargetDiv = document.getElementById('teamTarget');
+    const slider = document.querySelector('.slider');
 
-        const totalSlides = slides.children.length;
-        let currentIndex = 0;
+    const totalSlides = slides.children.length;
+    let currentIndex = 0;
 
-        const teamIntroduces = [
-            "안녕하세요",
-            "저희는 00입니다",
-            "팀 소개 3번째 내용",
-            "팀 소개 4번째 내용",
-            "팀 소개 5번째 내용"
-        ];
+    const teamIntroduces = [
+        `<strong class="pass">열성</strong> 작은 과제도 진심으로 도전하는 마음가짐을 가집니다.`,
+        `<strong class="fun">재미</strong> 즐거운 분위기에서 편안함과 활력을 함께 느낍니다.`,
+        `<strong class="comm">소통</strong> 팀원 간 원활한 의사소통을 바탕으로 협력합니다.`,
+        `<strong class="grow">성장</strong> 개인의 성장을 꾸준히 추구하며 발전합니다.`,
+        `<strong class="dili">성실</strong> 끝까지 책임을 다하는 태도를 유지합니다.`
+    ];
 
-        const teamTargets = [
-            "anjdi",
-            "ㅇㅇ",
-            "3. 000하기",
-            "4. 000하기",
-            "5. 000하기"
-        ];
 
-        function setSlidesWidth() {
-            const slideWidth = slides.children[0].clientWidth;
-            slides.style.width = `${slideWidth * totalSlides}px`;
-            return slideWidth;
-        }
+    const teamTargets = [
+        "[팀장] 김성민",
+        "[팀원] 김민지",
+        "[팀원] 김제경",
+        "[팀원] 유호영",
+        "[팀원] 최수영"
+    ];
 
-        let slideWidth = setSlidesWidth();
+    function setSlidesWidth() {
+        const slideWidth = slides.children[0].clientWidth;
+        slides.style.width = `${slideWidth * totalSlides}px`;
+        return slideWidth;
+    }
 
-        window.addEventListener('resize', () => {
-            slideWidth = setSlidesWidth();
-            goToSlide(currentIndex);
+    let slideWidth = setSlidesWidth();
+
+    window.addEventListener('resize', () => {
+        slideWidth = setSlidesWidth();
+        goToSlide(currentIndex);
+    });
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+            goToSlide(i);
+            resetAutoSlide();
         });
+        indicator.appendChild(dot);
+    }
+    const dots = indicator.querySelectorAll('.dot');
 
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.dataset.index = i;
-            dot.addEventListener('click', () => {
-                goToSlide(i);
-                resetAutoSlide();
-            });
-            indicator.appendChild(dot);
-        }
-        const dots = indicator.querySelectorAll('.dot');
+    function fadeContentOut() {
+        teamIntroduceDiv.classList.add('fade-out');
+        teamTargetDiv.classList.add('fade-out');
+    }
 
-         function fadeContentOut() {
-            teamIntroduceDiv.classList.add('fade-out');
-            teamTargetDiv.classList.add('fade-out');
-        }
+    function fadeContentIn() {
+        teamIntroduceDiv.classList.remove('fade-out');
+        teamIntroduceDiv.classList.add('fade-in');
 
-        function fadeContentIn() {
-            teamIntroduceDiv.classList.remove('fade-out');
-            teamIntroduceDiv.classList.add('fade-in');
+        teamTargetDiv.classList.remove('fade-out');
+        teamTargetDiv.classList.add('fade-in');
+    }
 
-            teamTargetDiv.classList.remove('fade-out');
-            teamTargetDiv.classList.add('fade-in');
-        }
+    function goToSlide(index) {
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        fadeContentOut();
 
-        function goToSlide(index) {
-            slides.style.transform = `translateX(-${index * slideWidth}px)`;
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
-            fadeContentOut();
+        setTimeout(() => {
+            teamIntroduceDiv.innerHTML = `<h2><span class="icon">💬</span> 팀 소개</h2><p>${teamIntroduces[index]}</p>`;
+            teamTargetDiv.innerHTML = `<h2><i class="fa-solid fa-user-group"></i> 팀 구성원</h2><p>${teamTargets[index]}</p>`;
 
-            setTimeout(() => {
-                teamIntroduceDiv.innerHTML = `<h2><span class="icon">💬</span> 팀 소개</h2><p>${teamIntroduces[index]}</p>`;
-                teamTargetDiv.innerHTML = `<h2><span class="icon">🎯</span> 팀 목표</h2><p>${teamTargets[index]}</p>`;
-                fadeContentIn();
-            }, 200);
+            fadeContentIn();
+        }, 200);
 
-            currentIndex = index;
-        }
+        currentIndex = index;
+    }
 
-        goToSlide(0);
+    goToSlide(0);
 
-        let autoSlideInterval = setInterval(() => {
+    let autoSlideInterval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(nextIndex);
+    }, 3000);
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
             let nextIndex = (currentIndex + 1) % totalSlides;
             goToSlide(nextIndex);
         }, 3000);
-
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(() => {
-                let nextIndex = (currentIndex + 1) % totalSlides;
-                goToSlide(nextIndex);
-            }, 3000);
-        }
+    }
 
 </script>
